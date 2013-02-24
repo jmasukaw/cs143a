@@ -1,0 +1,15 @@
+Single priority --> extend --> SJF
+
+RR
+get next is called only one time per cycle
+
+200-300 jobs
+statistics; avg burst type etc
+
+script to generate processes
+1/6 of the range
+make sure you dont have negative time on your distribution
+
+
+single queue priority
+3 independent vars (8 graphs)
