@@ -24,6 +24,7 @@ public class SJFSchedulingAlgorithm extends BaseSchedulingAlgorithm implements O
     
     /** Returns true if the job was present and was removed. */
     public boolean removeJob(Process p){
+    	return false; // Just a place holder to get things to compile, remove this when implementing
     }
 
     /** Transfer all the jobs in the queue of a SchedulingAlgorithm to another, such as
@@ -33,6 +34,7 @@ public class SJFSchedulingAlgorithm extends BaseSchedulingAlgorithm implements O
 
     /** Returns the next process that should be run by the CPU, null if none available.*/
     public Process getNextJob(long currentTime){
+    	return new Process(); // Just a place holder to get things to compile, remove this when implementing
     }
 
     public String getName(){
