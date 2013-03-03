@@ -16,12 +16,11 @@ public class PrioritySchedulingAlgorithm extends BasePriorityAlgorithm implement
     PrioritySchedulingAlgorithm(){
     	this.preemptive = false;	// Default preemptive off
     	activeJob = null;
-    	Comparator<Process> procComparator = new ProcessComparator();
+    	Comparator<Process> procComparator = new PriorityProcessComparator();
     	this.jobs = new PriorityQueue<Process>(10, procComparator);
     }
   
     public String getName(){
     	return "Single-queue Priority";
     }
-
 }
