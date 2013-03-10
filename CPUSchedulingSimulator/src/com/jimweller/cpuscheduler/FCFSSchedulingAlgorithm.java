@@ -2,7 +2,9 @@
  * 
  * A first-come first-served scheduling algorithm.
  *
- * @author: Kyle Benson
+ * @author: Jon Masukawa (33128396), Yan Zhao (31018809)
+ * Group #32
+ * 
  * Winter 2013
  *
  */
@@ -12,25 +14,30 @@ import java.util.*;
 
 public class FCFSSchedulingAlgorithm extends BaseSchedulingAlgorithm {
 
+	protected LinkedList<Process> jobs;
+	
+	protected Process activeJob;
+	
     FCFSSchedulingAlgorithm(){
-
+    	this.jobs = new LinkedList<Process>();
+    	this.activeJob = null;
     }
 
     /** Add the new job to the correct queue.*/
     public void addJob(Process p){
-
+    	jobs.add(p);
     }
     
     /** Returns true if the job was present and was removed. */
     public boolean removeJob(Process p){
-    	return false; // Just a place holder to get things to compile, remove this when implementing
+    	return jobs.remove(p); // Just a place holder to get things to compile, remove this when implementing
     }
 
     /** Transfer all the jobs in the queue of a SchedulingAlgorithm to another, such as
 	when switching to another algorithm in the GUI */
     public void transferJobsTo(SchedulingAlgorithm otherAlg) {
+    	Iterator<Process> iterator = jobs.iterator();
     }
-
 
     public boolean shouldPreempt(long currentTime){
     	return false; // Just a place holder to get things to compile, remove this when implementing
@@ -38,10 +45,13 @@ public class FCFSSchedulingAlgorithm extends BaseSchedulingAlgorithm {
 
     /** Returns the next process that should be run by the CPU, null if none available.*/
     public Process getNextJob(long currentTime){
-    	return new Process(); // Just a place holder to get things to compile, remove this when implementing
+    	if (activeJob == null || activeJob.isFinished()) {
+    		activeJob = jobs.remove();
+    	}
+    		return activeJob; // Just a place holder to get things to compile, remove this when implementing
     }
 
     public String getName(){
-	return "First-come first-served";
+    	return "First-come first-served";
     }
 }

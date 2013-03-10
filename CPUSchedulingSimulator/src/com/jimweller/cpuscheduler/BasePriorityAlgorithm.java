@@ -2,7 +2,9 @@
  * 
  * An abstract scheduling algorithm for others to inherit from.
  *
- * @author: Kyle Benson
+ * @author: Jon Masukawa (33128396), Yan Zhao (31018809)
+ * Group #32
+ * 
  * Winter 2013
  *
  */

@@ -2,7 +2,9 @@
  * 
  * A scheduling algorithm that randomly picks the next job to go.
  *
- * @author: Kyle Benson
+ * @author: Jon Masukawa (33128396), Yan Zhao (31018809)
+ * Group #32
+ * 
  * Winter 2013
  *
  */
@@ -20,7 +22,7 @@ public class RoundRobinSchedulingAlgorithm extends BaseSchedulingAlgorithm {
 
     /** Add the new job to the correct queue. */
     public void addJob(Process p) {
-
+    	
     }
 
     /** Returns true if the job was present and was removed. */
