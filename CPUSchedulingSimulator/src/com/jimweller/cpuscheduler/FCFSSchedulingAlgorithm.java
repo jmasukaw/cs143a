@@ -14,9 +14,9 @@ import java.util.*;
 
 public class FCFSSchedulingAlgorithm extends BaseSchedulingAlgorithm {
 
-	protected LinkedList<Process> jobs;
+	private LinkedList<Process> jobs;
 	
-	protected Process activeJob;
+	private Process activeJob;
 	
     FCFSSchedulingAlgorithm(){
     	this.jobs = new LinkedList<Process>();
