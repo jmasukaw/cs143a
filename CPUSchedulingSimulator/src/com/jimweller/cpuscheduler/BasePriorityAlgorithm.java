@@ -43,6 +43,10 @@ public abstract class BasePriorityAlgorithm implements SchedulingAlgorithm {
     		processList.add(job);
     	}
     	
+    	if (activeJob != null) {
+    		otherAlg.addJob(activeJob);
+    	}
+    	
     	for(Process p : processList){
     		otherAlg.addJob(p);
     		this.removeJob(p);

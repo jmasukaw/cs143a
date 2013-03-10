@@ -43,6 +43,10 @@ public class FCFSSchedulingAlgorithm extends BaseSchedulingAlgorithm {
     		temp.add(iterator.next());
     	}
     	
+    	if (activeJob != null) {
+    		otherAlg.addJob(activeJob);
+    	}
+    	
     	for (Process process : temp) {
 			otherAlg.addJob(process);
 			this.removeJob(process);
