@@ -36,10 +36,16 @@ public abstract class BasePriorityAlgorithm implements SchedulingAlgorithm {
 	when switching to another algorithm in the GUI */
     public void transferJobsTo(SchedulingAlgorithm otherAlg) {
     	Iterator<Process> iterator = this.jobs.iterator();
+    	ArrayList<Process> processList = new ArrayList<Process>();
+    	
     	while(iterator.hasNext()){
     		Process job = iterator.next();
-    		otherAlg.addJob(job);
-    		this.removeJob(job);
+    		processList.add(job);
+    	}
+    	
+    	for(Process p : processList){
+    		otherAlg.addJob(p);
+    		this.removeJob(p);
     	}
     }
     
