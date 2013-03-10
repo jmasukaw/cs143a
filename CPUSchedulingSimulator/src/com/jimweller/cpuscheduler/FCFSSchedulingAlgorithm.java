@@ -36,7 +36,17 @@ public class FCFSSchedulingAlgorithm extends BaseSchedulingAlgorithm {
     /** Transfer all the jobs in the queue of a SchedulingAlgorithm to another, such as
 	when switching to another algorithm in the GUI */
     public void transferJobsTo(SchedulingAlgorithm otherAlg) {
+    	ArrayList<Process> temp = new ArrayList<Process>();
     	Iterator<Process> iterator = jobs.iterator();
+    	
+    	while (iterator.hasNext()) {
+    		temp.add(iterator.next());
+    	}
+    	
+    	for (Process process : temp) {
+			otherAlg.addJob(process);
+			this.removeJob(process);
+		}
     }
 
     public boolean shouldPreempt(long currentTime){
