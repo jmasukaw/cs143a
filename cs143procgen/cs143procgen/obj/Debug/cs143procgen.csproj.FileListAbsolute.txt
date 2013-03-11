@@ -1,0 +1,7 @@
+C:\Users\Jon\Documents\Visual Studio 2012\cs143procgen\cs143procgen\bin\Debug\cs143procgen.exe.config
+C:\Users\Yan\Desktop\CS 143A Project\cs143procgen\cs143procgen\bin\Debug\cs143procgen.exe.config
+C:\Users\Yan\Desktop\CS 143A Project\cs143procgen\cs143procgen\bin\Debug\cs143procgen.exe
+C:\Users\Yan\Desktop\CS 143A Project\cs143procgen\cs143procgen\bin\Debug\cs143procgen.pdb
+C:\Users\Yan\Desktop\CS 143A Project\cs143procgen\cs143procgen\obj\Debug\cs143procgen.csprojResolveAssemblyReference.cache
+C:\Users\Yan\Desktop\CS 143A Project\cs143procgen\cs143procgen\obj\Debug\cs143procgen.exe
+C:\Users\Yan\Desktop\CS 143A Project\cs143procgen\cs143procgen\obj\Debug\cs143procgen.pdb
