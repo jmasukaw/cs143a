@@ -59,8 +59,7 @@ public abstract class BasePriorityAlgorithm implements SchedulingAlgorithm {
     	// If not preemptive, only get the next job when the current one is done
     	if (this.isPreemptive()){
         	activeJob = this.jobs.peek();    		
-    	}else
-    	{
+    	}else {
     		// If no job, get the next priority one, otherwise only get
     		// The next job when the current one is done
     		if (activeJob == null)

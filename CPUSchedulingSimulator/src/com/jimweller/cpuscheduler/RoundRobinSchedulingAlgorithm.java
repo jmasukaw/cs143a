@@ -15,14 +15,14 @@ import java.util.*;
 public class RoundRobinSchedulingAlgorithm extends BaseSchedulingAlgorithm {
 
     /** the timeslice each process gets */
-    private int quantum;
-    
+    protected int quantum;
+
+    protected Process activeJob;
+
     private int counter;
     
     private LinkedList<Process> jobs;
     
-    private Process activeJob;
-
     RoundRobinSchedulingAlgorithm() {
     	this.jobs = new LinkedList<Process>();
     	this.activeJob = null;
@@ -92,8 +92,10 @@ public class RoundRobinSchedulingAlgorithm extends BaseSchedulingAlgorithm {
     	}
     	
     	if (activeJob == null || activeJob.isFinished()) {
-    		activeJob = jobs.remove();
-    		counter = 0;
+    		if(jobs.size() > 0) {
+    			activeJob = jobs.remove();
+    			counter = 0;    			
+    		}
     	}
     	
     	return activeJob; // Just a place holder to get things to compile, remove this when implementing
