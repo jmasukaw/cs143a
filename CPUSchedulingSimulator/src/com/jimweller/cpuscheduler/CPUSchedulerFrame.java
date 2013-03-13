@@ -45,7 +45,7 @@ public class CPUSchedulerFrame extends JFrame implements ActionListener {
     JMenu fileMenu, algorithmMenu, optionsMenu, speedMenu;
     JMenuItem newMI, openMI, resetMI, saveMI,quitMI;
     JRadioButtonMenuItem fps1MI,fps10MI,fps20MI,fps30MI,fps40MI,fps50MI,
-	fps60MI,fps70MI,fps80MI,fps90MI,fps100MI;
+	fps60MI,fps70MI,fps80MI,fps90MI,fps100MI,fps500MI;
     JCheckBoxMenuItem     preemptCB,priCB,showHiddenCB;
 
 
@@ -362,7 +362,9 @@ public class CPUSchedulerFrame extends JFrame implements ActionListener {
 	else if( e.getSource() == fps100MI){
 	    setFPS(100);
 	}
-
+	else if( e.getSource() == fps500MI){
+	    setFPS(500);
+	}
 	else {
 	    //Check if it's one of the algorithms
 	    for (int i = 0; i < algButtons.size(); i++){
@@ -598,6 +600,12 @@ public class CPUSchedulerFrame extends JFrame implements ActionListener {
 	fps100MI.addActionListener(this);
 	speedMenu.add(fps100MI);
 
+	fps500MI = new JRadioButtonMenuItem("500 fps");
+	fps500MI.setToolTipText("Set animation rate / cpu clock");
+	bg.add(fps500MI);
+	fps500MI.addActionListener(this);
+	speedMenu.add(fps500MI);
+	
 	optionsMenu.add(speedMenu);
 	optionsMenu.addSeparator();
 
