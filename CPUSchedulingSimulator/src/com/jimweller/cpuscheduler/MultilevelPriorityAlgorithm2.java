@@ -1,4 +1,4 @@
-/** MultilevelPriorityAlgorithm.java
+/** MultilevelPriorityAlgorithm2.java
  * 
  *
  * @author: Jon Masukawa (33128396), Yan Zhao (31018809)
@@ -9,20 +9,20 @@
  */
 package com.jimweller.cpuscheduler;
 
-public class MultilevelPriorityAlgorithm extends RoundRobinSchedulingAlgorithm implements OptionallyPreemptiveSchedulingAlgorithm {
+public class MultilevelPriorityAlgorithm2 extends RoundRobinSchedulingAlgorithm implements OptionallyPreemptiveSchedulingAlgorithm {
 
     /** The boolean value that toggles preemptiveness. */
     private boolean preemptive;
     
-    private RoundRobinSchedulingAlgorithm jobs1;
+    private SJFSchedulingAlgorithm jobs1;
     private RoundRobinSchedulingAlgorithm jobs2;
-    private FCFSSchedulingAlgorithm jobs3;
+    private RoundRobinSchedulingAlgorithm jobs3;
     
-	public MultilevelPriorityAlgorithm() {
-		this.jobs1 = new RoundRobinSchedulingAlgorithm();
+	public MultilevelPriorityAlgorithm2() {
+		this.jobs1 = new SJFSchedulingAlgorithm();
 	    this.jobs2 = new RoundRobinSchedulingAlgorithm();
-	    this.jobs3 = new FCFSSchedulingAlgorithm();
-	    this.jobs2.setQuantum(jobs1.getQuantum() * 2);
+	    this.jobs3 = new RoundRobinSchedulingAlgorithm();
+	    this.jobs3.setQuantum(jobs2.getQuantum() * 2);
 		this.activeJob = null;
 	}
 	
@@ -89,7 +89,7 @@ public class MultilevelPriorityAlgorithm extends RoundRobinSchedulingAlgorithm i
 
 	@Override
 	public String getName() {
-		return "Multi-level Priority Algorithm (RR, 2xRR, FCFS)";
+		return "Multi-level Priority Algorithm (SJF, RR, 2xRR)";
 	}
 
 	@Override
