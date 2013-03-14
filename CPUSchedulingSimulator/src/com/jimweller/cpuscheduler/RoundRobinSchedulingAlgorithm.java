@@ -83,14 +83,22 @@ public class RoundRobinSchedulingAlgorithm extends BaseSchedulingAlgorithm {
      * available.
      */
     public Process getNextJob(long currentTime) {
+    	
+    	//If there is a job running currently, increase the time quantum, check
+    	//if the job has run over the time quantum, re-add the job and then
+    	//get a new job to start executing.
     	if (activeJob != null) {
     		counter++;
     		if (counter >= quantum) {
+    			counter = 0;
     			jobs.add(activeJob);
     			activeJob = jobs.remove();
     		}
     	}
     	
+    	//If there is no active job running, check if it is finished. If there
+    	//are jobs in the job queue, remove them and reset the quantum for that
+    	//particular job.
     	if (activeJob == null || activeJob.isFinished()) {
     		if(jobs.size() > 0) {
     			activeJob = jobs.remove();

@@ -59,6 +59,8 @@ public class FCFSSchedulingAlgorithm extends BaseSchedulingAlgorithm {
 
     /** Returns the next process that should be run by the CPU, null if none available.*/
     public Process getNextJob(long currentTime){
+    	//Check to see if there is no job running or if the job is finished,
+    	//get the next job.
     	if (activeJob == null || activeJob.isFinished()) {
     		activeJob = jobs.remove();
     	}

@@ -56,12 +56,12 @@ public abstract class BasePriorityAlgorithm implements SchedulingAlgorithm {
     /** Returns the next process that should be run by the CPU, null if none available.*/
     public Process getNextJob(long currentTime){
 
-    	// If not preemptive, only get the next job when the current one is done
+    	// If not preemptive, only get the next job when the current one is done.
     	if (this.isPreemptive()){
         	activeJob = this.jobs.peek();    		
     	}else {
     		// If no job, get the next priority one, otherwise only get
-    		// The next job when the current one is done
+    		// The next job when the current one is done.
     		if (activeJob == null)
     			activeJob = this.jobs.peek();
     		else
