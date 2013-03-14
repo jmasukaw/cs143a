@@ -15,5 +15,10 @@ public class MainApp   {
     //cpu.Simulate();
     //cpu.printCSV();
     CPUSchedulerFrame fr = new CPUSchedulerFrame();
+    
+
     }
+
+
+
 }
